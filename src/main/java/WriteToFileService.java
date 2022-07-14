@@ -11,8 +11,14 @@ public class WriteToFileService {
 
         stringBuffer.append("firstName, lastName, birthYear, birthMonth, birthDay\n");
 
-        for (Person person : people) {
-            stringBuffer.append(person.formatAsCSV() + "\n");
+        for (int i=0;i<people.size();i++) {
+            Person person = people.get(i);
+            if(i == people.size() -1){
+                stringBuffer.append(person.formatAsCSV());
+            }else{
+                stringBuffer.append(person.formatAsCSV() + "\n");
+            }
+
         }
 
         try (FileWriter fileWriter = new FileWriter(fileName);) {
