@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Runner {
+public class FileIORunner {
 
     public static void main(String[] args) throws IOException {
 
@@ -34,7 +34,7 @@ public class Runner {
              }else{
                 WriteToFileService writeToFileService = new WriteToFileService();
                 writeToFileService.writeToFile("person.csv",peopleList);
-                System.out.println("GOODBYE!!");
+                userOutputService.printMessage("GOODBYE!");
                 break;
              }
           }
